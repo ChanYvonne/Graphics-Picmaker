@@ -1,0 +1,5 @@
+#2017-02-03
+
+stuff = open("image.ppm", "w")
+
+stuff.close()
