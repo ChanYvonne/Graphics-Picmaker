@@ -1,22 +1,29 @@
 #2017-02-03
 
-stuff = open("image.ppm", "w")
-stuff.write(getImage(500,500))
-stuff.close()
-
 def getImage(x, y):
 
-    num = "P3 500 500 255\n"
+    num = "P3 %d %d 255\n"%(x,y)
 
-    r=0
-    c=0
+    j=0
+    k=0
 
-    while r < 500:
-        while c < 500:
+    while j < 500:
+        while k < 500:
 
-            r+=1
-            c+=1
+            r = 255;
+            g = 255;
+            b = 0;
+            
+            j+=1
+            k+=1
 
+            num += "%d %d %d \n"%(r,g,b)
     num += "\n"
 
+    return num
+
     
+if __name__ == '__main__':
+    stuff = open("image.ppm", "w")
+    stuff.write(getImage(500,500))
+    stuff.close()
